@@ -21,7 +21,7 @@ let router = createBrowserRouter([
         children: [
             {
                 path: '/about',
-                element: <Suspense fallback={<h1>Loadinng</h1>}><About count={201} /></Suspense>
+                element: <Suspense fallback={<h1>Loadinng</h1>}><About count={'dfgdfdfdfdgfsdxgb'} /></Suspense>
             },
             {
                 path: '/shop',

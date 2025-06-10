@@ -5,10 +5,14 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import path from "path";
 
 export const buildPlugins = (options: BuildOptions, isDev: boolean): Configuration['plugins'] => {
     const plugins: Configuration['plugins'] = [
-        new HtmlWebpackPlugin({ template: options.paths.html }),
+        new HtmlWebpackPlugin({
+            template: options.paths.html,
+            favicon: path.resolve(options.paths.public, 'favicon.ico')
+        }),
         new DefinePlugin({
             __PLATFORM__: JSON.stringify(options.platform),
             __ENV__: JSON.stringify(options.mode),

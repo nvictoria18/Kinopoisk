@@ -6,6 +6,7 @@ export interface BuildPaths {
     output: string;
     include: string;
     exclude: string;
+    public: string;
 }
 
 export type BuildPlatform = "mobile" | "desktop";

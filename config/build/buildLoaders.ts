@@ -2,6 +2,7 @@ import { ModuleOptions } from "webpack";
 import { BuildOptions } from "./types/types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshTypeScript from 'react-refresh-typescript'
+import { buildBabelLoader } from "./babel/buildBabelLoader";
 
 export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptions['rules'] => {
     const tsLoader = {
@@ -23,6 +24,8 @@ export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptio
         exclude: options.paths.exclude,
 
     };
+
+    const babelLoader = buildBabelLoader();
 
     const cssLoader = {
         test: /\.css$/i,
@@ -57,7 +60,8 @@ export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptio
     };
 
     return [
-        tsLoader,
+        // tsLoader,
+        babelLoader,
         cssLoader,
         assetLoader,
         svgrLoader

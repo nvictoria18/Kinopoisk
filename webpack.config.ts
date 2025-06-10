@@ -18,9 +18,10 @@ export default (env: EnvVariables) => {
     const paths: BuildPaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         html: path.resolve(__dirname, 'public', 'index.html'),
+        public: path.resolve(__dirname, 'public'),
         output: path.resolve(__dirname, 'build'),
         include: path.resolve(__dirname, 'src'),
-        exclude: path.resolve(__dirname, 'node_modules')
+        exclude: path.resolve(__dirname, 'node_modules'),
     }
     const config: webpack.Configuration = buildWebpack({
         paths,
