@@ -1,0 +1,17 @@
+@theme {
+    --font-poppins-bold: "Poppins-Bold";
+    --font-poppins-regular: "Poppins-Regular";
+    --font-poppins-semibold: "Poppins-SemiBold";
+
+    --tracking-heading-two-percent: -0.02em;
+    --tracking-heading-one-half-percent: -0.015em;
+    --tracking-overline-regular: 0.04em;
+    --tracking-link: 0.02em;
+
+    --text-heading-one: 4em;
+    --text-heading-three: 2em;
+    --text-heading-five: 1.25em;
+    --text-heading-six: 1em;
+    --text-body-small: 0.875em;
+    --text-body-extra-small: 0.75em;
+}

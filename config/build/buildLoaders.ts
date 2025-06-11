@@ -36,22 +36,27 @@ export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptio
         type: 'asset/resource',
     };
 
+    const fontsLoader = {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+    };
+
     const svgrLoader = {
         test: /\.svg$/i,
         use: [{
             loader: '@svgr/webpack',
             options: {
                 icon: true,
-                svgoConfig: {
-                    plugins: [
-                        {
-                            name: 'convertColors',
-                            params: {
-                                currentColor: true
-                            }
-                        }
-                    ]
-                }
+                // svgoConfig: {
+                //     plugins: [
+                //         {
+                //             name: 'convertColors',
+                //             params: {
+                //                 currentColor: true
+                //             }
+                //         }
+                //     ]
+                // }
             }
         }],
     };
@@ -59,6 +64,7 @@ export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptio
     return [
         tsLoader,
         cssLoader,
+        fontsLoader,
         assetLoader,
         svgrLoader
     ]
