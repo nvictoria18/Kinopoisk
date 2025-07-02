@@ -9,7 +9,7 @@ let router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/home',
+                path: '/',
                 element: <Suspense fallback={<h1>Loadinng</h1>}><Home /></Suspense>
             },
         ]

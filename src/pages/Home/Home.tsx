@@ -7,7 +7,7 @@ type HomeProps = {
 const Home = () => {
     return (
     <div>
-        <Navbar isPermission={true} />
+        <Navbar isPermission={false} />
 
     </div>)
 }
