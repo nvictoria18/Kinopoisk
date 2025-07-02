@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "./themes/colorsTheme.css" layer(theme);
+@import "./themes/fontsTheme.css" layer(theme);
+@import "./themes/breakPointsTheme.css" layer(theme);
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    font-weight: 600;
+    src: url('./../../shared/assets/fonts/Poppins-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./../../shared/assets/fonts/Poppins-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('./../../shared/assets/fonts/Poppins-SemiBold.otf') format('opentype');
+}
+
+.heading-one {
+    @apply font-poppins-semibold text-heading-one tracking-heading-two-percent leading-20;
+}
+
+.heading-two {
+    @apply font-poppins-semibold text-5xl tracking-heading-two-percent leading-14;
+}
+
+.heading-three {
+    @apply font-poppins-semibold text-heading-three tracking-heading-two-percent leading-10;
+}
+
+.heading-four {
+    @apply font-poppins-bold text-2xl tracking-heading-one-half-percent leading-8;
+}
+
+.heading-five {
+    @apply font-poppins-bold text-heading-five tracking-heading-one-half-percent leading-6;
+}
+
+.heading-six {
+    @apply font-poppins-bold text-heading-six tracking-heading-one-half-percent leading-6;
+}
+
+.body-large {
+    @apply font-poppins-regular text-heading-five tracking-normal leading-8;
+}
+
+.body-regular {
+    @apply font-poppins-regular text-heading-six tracking-normal leading-6;
+}
+
+.body-small {
+    @apply font-poppins-regular text-body-small tracking-normal leading-6;
+}
+
+.body-extra-small {
+    @apply font-poppins-regular text-body-extra-small tracking-normal leading-6;
+}
+
+.caption {
+    @apply font-poppins-regular text-body-small tracking-normal leading-4;
+}
+
+.overline-regular {
+    @apply font-poppins-bold text-body-small tracking-overline-regular leading-6;
+}
+
+.overline-small {
+    @apply font-poppins-bold text-body-extra-small tracking-overline-regular leading-4;
+}
+
+.link-regular {
+    @apply font-poppins-semibold text-heading-six tracking-link leading-6;
+}
+
+.link-small {
+    @apply font-poppins-semibold text-body-small tracking-overline-regular leading-6;
+}
+
+.link-extra-small {
+    @apply font-poppins-semibold text-body-extra-small tracking-overline-regular leading-4;
+}
