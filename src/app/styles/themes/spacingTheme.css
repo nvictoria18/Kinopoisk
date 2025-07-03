@@ -1,3 +1,7 @@
-/* @theme {
-    --spacing-1: 
-} */
+@theme {
+    --spacing-120: 7.5rem;
+}
+
+@theme {
+    --m-120: 7.5rem;
+}

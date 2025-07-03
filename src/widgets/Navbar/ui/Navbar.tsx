@@ -9,7 +9,7 @@ const Navbar = ({
     isPermission
 }: NavBar) => {
     return (<header
-        className="bg-black-75"
+        className="bg-gray-900 opacity-80"
     >
         <div className="w-full max-w-[1200px] flex m-auto justify-between items-center py-4 laptop:max-w-[1200px] mobile:max-w-[700px]">
             <div>
