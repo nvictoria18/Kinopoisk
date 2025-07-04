@@ -1,5 +1,6 @@
 import Logo from '@/shared/assets/logo.svg';
 import menu from './Menu';
+import { Link } from 'react-router-dom';
 
 type NavBar = {
     isPermission: boolean
@@ -13,7 +14,9 @@ const Navbar = ({
     >
         <div className="w-full max-w-[1200px] flex m-auto justify-between items-center py-4 laptop:max-w-[1200px] mobile:max-w-[700px]">
             <div>
-                <Logo className='laptop:w-10 h-10 mobile:w-7 h-7' />
+                <Link to="/">
+                    <Logo className='laptop:w-10 h-10 mobile:w-7 h-7' />
+                </Link>
             </div>
 
             <div

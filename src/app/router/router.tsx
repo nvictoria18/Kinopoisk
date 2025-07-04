@@ -12,6 +12,7 @@ let router = createBrowserRouter([
                 path: '/',
                 element: <Suspense fallback={<h1>Loadinng</h1>}><Home /></Suspense>
             },
+            
         ]
     },
 ]);
