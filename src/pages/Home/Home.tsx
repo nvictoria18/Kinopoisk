@@ -18,7 +18,7 @@ const Home = () => {
             <Navbar isPermission={false} />
             <div className="my-20 mx-auto max-w-[75rem] space-y-6">
                 <div className="space-y-4 max-w-[588px]">
-                    <div className="heading-one mobile:text-sm laptop: text-gray-50">
+                    <div className="heading-one text-5xl text-gray-50 md:text-heading-one">
                         MaileHereko
                     </div>
                     <div className="font-poppins-regular text-[1rem] leading-6 tracking-normal text-gray-300">

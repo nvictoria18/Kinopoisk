@@ -21,11 +21,11 @@
 }
 
 .heading-one {
-    @apply font-poppins-semibold text-heading-one tracking-heading-two-percent leading-20;
+    @apply font-poppins-semibold tracking-heading-two-percent leading-20;
 }
 
 .heading-two {
-    @apply font-poppins-semibold text-5xl tracking-heading-two-percent leading-14;
+    @apply font-poppins-semibold tracking-heading-two-percent leading-14;
 }
 
 .heading-three {
@@ -73,7 +73,7 @@
 }
 
 .link-regular {
-    @apply font-poppins-semibold text-heading-six tracking-link leading-6;
+    @apply font-poppins-semibold tracking-link leading-6;
 }
 
 .link-small {

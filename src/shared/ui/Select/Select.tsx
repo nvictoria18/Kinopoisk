@@ -32,13 +32,15 @@ const Select = ({
     
 
     return (
-        <div className="relative bg-black-20 w-[368px] h-14 p-2 rounded-[0.5rem]">
+        <div className="relative bg-black-20 max-w-80 md:max-w-[368px] h-14 p-2 rounded-[0.5rem]">
             <div ref={ref} className="absolute flex z-1">
                 {options.map((option, index) => (
                     <div
                         key={index + option}
                         className={`relative ${currentOption === index ? 'text-primary-50' : 'text-gray-300'} 
-                        px-8 py-2 rounded-[0.5rem] link-regular transition-all duration-200 ease-in-out`}
+                        px-8 py-2 rounded-[0.5rem] link-regular text-xs md:text-base transition-all duration-200 ease-in-out
+                        
+                        `}
                         onClick={() => handleChangeOption(index)}
                     >
                         {option}

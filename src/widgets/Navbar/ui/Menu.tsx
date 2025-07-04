@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
     <div
-        className='mx-4 my-3 mobile:mx-2'
+        className='mx-4 my-3 sm:mx-2'
     >
         <Link to="/dashboard">
             Dashboard
@@ -12,14 +12,14 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
     </div>,
     <div
 
-        className='mx-4 my-3 mobile:mx-2'
+        className='mx-4 my-3 sm:mx-2'
     >
         <Link to="/suggestions">
             Suggestions
         </Link>
     </div>,
     <div
-        className='mx-4 my-3  mobile:mx-2'
+        className='mx-4 my-3  sm:mx-2'
 
     >
         <Link to="/add">
@@ -39,7 +39,7 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
     </div>
 ]) : ([
     <div
-        className='mx-4 my-3 laptop:mx-4 mobile:mx-2'
+        className='mx-4 my-3 laptop:mx-4 sm:mx-2'
 
     >
         <Link to="/movies">
@@ -47,7 +47,7 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
         </Link>
     </div>,
     <div
-        className='my-3 laptop:mx-4 mobile:mx-2'
+        className='my-3 laptop:mx-4 sm:mx-2'
     >
         <Link
             to="/tv-shows"
@@ -55,7 +55,7 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
             TV Shows
         </Link>
     </div>,
-    <div className='my-3 box-sizing:content-box laptop:mx-8 mobile:mx-2'>
+    <div className='my-3 box-sizing:content-box laptop:mx-8 sm:mx-2'>
         <Link
             className='flex gap-x-2 items-center'
             to="/suggest-me">

@@ -1,5 +1,5 @@
 @theme {
-    --breakpoint-mobile: 20rem;
-    --breakpoint-laptop: 90rem;
-    --breakpoint-desktop: 120rem;
+    --breakpoint-sm: 20rem;
+    --breakpoint-md: 90rem;
+    --breakpoint-lg: 120rem;
 }
