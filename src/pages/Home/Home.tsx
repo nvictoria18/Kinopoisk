@@ -1,6 +1,7 @@
 import Navbar from "@/widgets/Navbar/ui/Navbar";
 import Background from "@/shared/assets/background.png"
 import Input from "@/shared/ui/Input/Input";
+import Select from "@/shared/ui/Select/Select";
 
 type HomeProps = {
     count: number;
@@ -17,11 +18,15 @@ const Home = () => {
                     <div className="text-gray-50 heading-one">
                         MaileHereko
                     </div>
-                    <div className="font-poppins-regular  text-[1rem] leading-6 tracking-normal text-gray-300">
+                    <div className="font-poppins-regular text-[1rem] leading-6 tracking-normal text-gray-300">
                         List of movies and TV Shows, I, <span className="text-primary-300">Pramod Poudel</span> have watched till date. Explore what I have watched and also feel free to make a suggestion. 😉
                     </div>
                 </div>
                 <Input placeholder="Search Movies or TV Shows"></Input>
+            </div>
+            <div className="mx-120">
+
+                <Select options={['All', 'Movies', 'TV Shows']} />
             </div>
         </div>)
 }
