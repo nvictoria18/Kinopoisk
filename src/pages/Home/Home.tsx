@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div style={{
             backgroundImage: `url(${Background})`
-        }} className="w-full bg-no-repeat bg-cover bg-[position:0_10%]">
+        }} className="w-full bg-no-repeat bg-cover bg-[position:0_5%]">
             <Navbar isPermission={false} />
             <div className="my-20 mx-120 space-y-6">
                 <div className="space-y-4 max-w-[588px]">
@@ -26,7 +26,7 @@ const Home = () => {
             </div>
             <div className="mx-120">
 
-                <Select options={['All', 'Movies', 'TV Shows']} />
+                <Select options={['All', 'Movies', 'TV Shows' ]} />
             </div>
         </div>)
 }
