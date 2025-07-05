@@ -3,21 +3,25 @@
 @import "./themes/fontsTheme.css" layer(theme);
 @import "./themes/breakPointsTheme.css" layer(theme);
 @import "./themes/spacingTheme.css" layer(theme);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 @font-face {
     font-family: 'Poppins-Bold';
-    font-weight: 600;
     src: url('./../../shared/assets/fonts/Poppins-Bold.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins-Regular';
     src: url('./../../shared/assets/fonts/Poppins-Regular.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins-SemiBold';
     src: url('./../../shared/assets/fonts/Poppins-SemiBold.otf') format('opentype');
+    font-display: swap;
+
 }
 
 .heading-one {
@@ -82,6 +86,13 @@
 
 .link-extra-small {
     @apply font-poppins-semibold text-body-extra-small tracking-overline-regular leading-4;
+}
+
+@layer base {
+  body {
+    font-family: 'Poppins';
+    font-weight: 700;
+  }
 }
 
 body {

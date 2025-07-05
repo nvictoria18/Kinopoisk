@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 type SelectProps = {
     options: string[]
@@ -9,37 +9,38 @@ const Select = ({
 }: SelectProps) => {
     const [currentOption, setCurrentOption] = useState(0);
     const ref = useRef(null);
-    const currentWidth: number = ref?.current?.children[currentOption].offsetWidth ?? 85;
     const [x, setX] = useState(0);
-    const widthElements = [0]
+    const [widthElements, setWidthElements] = useState([0])
+    const currentWidth = widthElements[currentOption + 1] ?? 0
 
     const handleChangeOption = (index: number) => {
         setCurrentOption((prev) => prev = index)
-        setX((prev) => {
-            return widthElements.slice(0, index + 1).reduce((acc, el) => acc + el)
-        })
+        setX(widthElements.slice(0, index + 1).reduce((acc, el) => acc + el))
     }
-    
-    useEffect(() => {
+
+    useLayoutEffect(() => {
 
         if (ref?.current?.children) {
-            [...ref?.current?.children].forEach((value: HTMLElement) => {
-                widthElements.push(value.offsetWidth)
+            const widths = [...ref?.current?.children].map((value: HTMLElement) => {
+                return value.offsetWidth
             })
-
+            setWidthElements([0, ...widths])
         }
-    }, [widthElements])
-    
+
+    }, [])
 
     return (
-        <div className="relative bg-black-20 max-w-80 md:max-w-[368px] h-14 p-2 rounded-[0.5rem]">
+        <div
+
+            className="relative bg-black-20 max-w-80 md:max-w-[368px] h-14 p-2 rounded-[0.5rem]">
             <div ref={ref} className="absolute flex z-1">
                 {options.map((option, index) => (
                     <div
+
                         key={index + option}
                         className={`relative ${currentOption === index ? 'text-primary-50' : 'text-gray-300'} 
-                        px-8 py-2 rounded-[0.5rem] link-regular text-xs md:text-base transition-all duration-200 ease-in-out
-                        
+                        px-8 py-2 rounded-[0.5rem] md:text-base transition-all duration-200 ease-in-out
+                        tracking-link leading-6 font-semibold
                         `}
                         onClick={() => handleChangeOption(index)}
                     >
