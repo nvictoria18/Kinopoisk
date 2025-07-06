@@ -1,6 +1,6 @@
 import ArrowRight from '@/shared/assets/arrow-right.svg';
 import Logout from '@/shared/assets/logout.svg'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { TypesOfScreen } from '@/shared/types/index'
 
 type MenuProps = Record<TypesOfScreen, (JSX.Element | string)[]>
@@ -9,36 +9,36 @@ const menuHavePermission = [
     <div
         className='mx-4 my-3'
     >
-        <Link to="/dashboard">
+        <NavLink to="/dashboard">
             Dashboard
-        </Link>
+        </NavLink>
     </div>,
     <div
 
         className='mx-4 my-3'
     >
-        <Link to="/suggestions">
+        <NavLink to="/suggestions">
             Suggestions
-        </Link>
+        </NavLink>
     </div>,
     <div
         className='mx-4 my-3'
 
     >
-        <Link to="/add">
+        <NavLink to="/add">
             Add
-        </Link>
+        </NavLink>
     </div>,
     <div
     >
-        <Link
+        <NavLink
             to="/logout"
             className='flex gap-x-2 items-center mx-8 my-3'
         >
             <Logout />
 
             Logout
-        </Link>
+        </NavLink>
     </div>
 ]
 
@@ -47,26 +47,26 @@ const menuHaventPermission = [
         className='mx-4 my-3'
 
     >
-        <Link to="/movies">
+        <NavLink to="/movies">
             Movies
-        </Link>
+        </NavLink>
     </div>,
     <div
         className='my-3 mx-4 '
     >
-        <Link
+        <NavLink
             to="/tv-shows"
         >
             TV Shows
-        </Link>
+        </NavLink>
     </div>,
     <div className='my-3 content-box mx-8'>
-        <Link
+        <NavLink
             className='flex gap-x-2 items-center'
             to="/suggest-me">
             Suggest me
             <ArrowRight />
-        </Link>
+        </NavLink>
     </div>
 ];
 

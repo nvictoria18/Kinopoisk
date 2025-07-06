@@ -6,12 +6,16 @@ type CardProps = {
     variants: string;
     name: string;
     rating: string;
+    id: number;
+    page: string
 }
 
 const Card = ({
+    page,
     image,
     variants,
     name,
+    id,
     rating,
 }: CardProps) => {
     return (
@@ -27,7 +31,7 @@ const Card = ({
             </div>
             <div
                 className='mt-4 mb-2 p-2 text-gray-50 link-regular'
-            ><Link to={name}>{name}</Link></div>
+            ><Link to={`${page}/${id}`}>{name}</Link></div>
             {/*  */}
         </div>
     )

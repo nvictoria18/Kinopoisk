@@ -1,0 +1,1 @@
+export { MoviesLazy as Movies } from './Movies.lazy';
