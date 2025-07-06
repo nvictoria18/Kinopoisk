@@ -16,10 +16,10 @@ const Card = ({
 }: CardProps) => {
     return (
         <div className="w-[17.625rem] bg-gray-800 p-2 rounded-lg">
-            <div className="relative">
-                <div className="absolute bg-black-65 rounded-lg backdrop-blur-sm left-2 top-2.5">
+            <div className="relative z-0">
+                <div className="absolute z-1 bg-black-65 rounded-lg backdrop-blur-sm left-2 top-2.5">
                     <div className='flex text-warning-500 items-center m-2 gap-1 body-regular'>
-                        <Star/>
+                        <Star />
                         {rating}
                     </div>
                 </div>

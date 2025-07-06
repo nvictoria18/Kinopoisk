@@ -2,7 +2,6 @@ import Navbar from "@/widgets/Navbar/ui/Navbar";
 import Background from "@/shared/assets/background.png"
 import Input from "@/shared/ui/Input/Input";
 import Select from "@/shared/ui/Select/Select";
-import cartsOfFilm from "./ui/cardsOfFilm";
 import { Card } from '@/widgets/Card/index'
 import cardsOfFilm from "./ui/cardsOfFilm";
 
@@ -14,7 +13,7 @@ const Home = () => {
     return (
         <div style={{
             backgroundImage: `url(${Background})`
-        }} className="w-full bg-no-repeat bg-cover bg-[position:0_5%] pb-[156px]">
+        }} className="w-full relative z-0 bg-no-repeat bg-cover bg-[position:0_5%] pb-[156px]">
             <Navbar isPermission={false} />
             <div className="my-20 mx-auto max-w-[75rem] space-y-6">
                 <div className="space-y-4 max-w-[588px]">

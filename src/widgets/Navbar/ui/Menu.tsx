@@ -1,10 +1,13 @@
 import ArrowRight from '@/shared/assets/arrow-right.svg';
 import Logout from '@/shared/assets/logout.svg'
 import { Link } from 'react-router-dom';
+import { TypesOfScreen } from '@/shared/types/index'
 
-const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
+type MenuProps = Record<TypesOfScreen, (JSX.Element | string)[]>
+
+const menuHavePermission = [
     <div
-        className='mx-4 my-3 sm:mx-2'
+        className='mx-4 my-3'
     >
         <Link to="/dashboard">
             Dashboard
@@ -12,14 +15,14 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
     </div>,
     <div
 
-        className='mx-4 my-3 sm:mx-2'
+        className='mx-4 my-3'
     >
         <Link to="/suggestions">
             Suggestions
         </Link>
     </div>,
     <div
-        className='mx-4 my-3  sm:mx-2'
+        className='mx-4 my-3'
 
     >
         <Link to="/add">
@@ -37,9 +40,11 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
             Logout
         </Link>
     </div>
-]) : ([
+]
+
+const menuHaventPermission = [
     <div
-        className='mx-4 my-3 laptop:mx-4 sm:mx-2'
+        className='mx-4 my-3'
 
     >
         <Link to="/movies">
@@ -47,7 +52,7 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
         </Link>
     </div>,
     <div
-        className='my-3 laptop:mx-4 sm:mx-2'
+        className='my-3 mx-4 '
     >
         <Link
             to="/tv-shows"
@@ -55,7 +60,7 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
             TV Shows
         </Link>
     </div>,
-    <div className='my-3 box-sizing:content-box laptop:mx-8 sm:mx-2'>
+    <div className='my-3 content-box mx-8'>
         <Link
             className='flex gap-x-2 items-center'
             to="/suggest-me">
@@ -63,6 +68,27 @@ const menu = (isPermission: boolean): JSX.Element[] => isPermission ? ([
             <ArrowRight />
         </Link>
     </div>
-]);
+];
+
+const menu = (isPermission: boolean): MenuProps => isPermission ? (
+    {
+        mobile: [
+            'Dashboard',
+            'Suggestions',
+            'Add',
+            'Logout',
+        ],
+        laptop: menuHavePermission,
+        desktop: menuHavePermission,
+    }
+) : ({
+    mobile: [
+        'Movies',
+        'TV Shows',
+        'Suggest me',
+    ],
+    laptop: menuHaventPermission,
+    desktop: menuHaventPermission
+});
 
 export default menu;

@@ -8,7 +8,7 @@ export const buildLoaders = (options: BuildOptions, isDev: boolean): ModuleOptio
     const tsLoader = {
         // ts-loader умеет работать с JSX
         // если б мы не использовали typescript нужен был бы babel-loader
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         use: [
             {
                 loader: 'ts-loader',
