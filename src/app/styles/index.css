@@ -37,7 +37,7 @@
 }
 
 .heading-four {
-    @apply font-poppins-bold text-2xl -tracking-[0.022rem] leading-8;
+    @apply font-poppins-bold -tracking-[0.022rem] leading-8;
 }
 
 .heading-five {
@@ -49,11 +49,11 @@
 }
 
 .body-large {
-    @apply font-poppins-regular text-heading-five tracking-normal leading-8;
+    @apply font-poppins-regular tracking-normal leading-8;
 }
 
 .body-regular {
-    @apply font-poppins-regular text-heading-six tracking-normal leading-6;
+    @apply font-poppins-regular tracking-normal leading-6;
 }
 
 .body-small {
