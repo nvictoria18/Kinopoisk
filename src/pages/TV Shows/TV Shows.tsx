@@ -31,7 +31,6 @@ const TVShows = () => {
                     {cardsOfFilm.map((card, index) => (
                         <Card
                             page="/tv-shows"
-
                             id={card.id}
                             key={card.name + index}
                             image={card.image}

@@ -18,7 +18,8 @@ const Card = ({
     id,
     rating,
 }: CardProps) => {
-    return (
+
+        return (
         <div className="w-[17.625rem] bg-gray-800 p-2 rounded-lg">
             <div className="relative z-0">
                 <div className="absolute z-1 bg-black-65 rounded-lg backdrop-blur-sm left-2 top-2.5">

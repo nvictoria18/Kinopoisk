@@ -1,0 +1,1 @@
+export { SuggestLazy as Suggest } from './Suggest.lazy';

@@ -4,6 +4,7 @@ import Input from "@/shared/ui/Input/Input";
 import Select from "@/shared/ui/Select/Select";
 import { Card } from '@/widgets/Card/index'
 import cardsOfFilm from "./ui/cardsOfFilm";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
     return (

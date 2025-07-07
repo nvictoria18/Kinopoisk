@@ -1,6 +1,6 @@
 import Logo from '@/shared/assets/logo.svg';
 import menu from './Menu';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import Menu from '@/shared/assets/menu.svg'
 import useResize from '@/shared/hooks/useResize';
 import { useState, Fragment } from 'react';
@@ -64,7 +64,7 @@ const Navbar = ({
                         '
                         key={`${index} ${item}`}
                         >
-                            <NavLink className='space-x-2' to={`/${item}`}>{item}</NavLink>
+                            <NavLink className='space-x-2' to={`/${item.toString().split(" ").join("-").toLowerCase()}`}>{item}</NavLink>
                         </div>
                     ))}
                 </div>
