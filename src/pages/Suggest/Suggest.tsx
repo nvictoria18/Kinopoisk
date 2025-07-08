@@ -5,12 +5,16 @@ import Button from "@/shared/ui/Button/Button";
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
 import CardSkeleton from "@/widgets/Card/ui/CardSkeleton";
+import { Suspense, useState } from "react";
+import { SuggestionPopup } from "@/shared/ui/Popup";
 
 const Suggest = () => {
+    const [isSuggest, setIsSuggest] = useState(false)
+
     return (
         <div style={{
             backgroundImage: `url(${Background})`
-        }} className="w-full relative z-0 bg-no-repeat bg-cover bg-[position:0_5%] pb-14">
+        }} className="w-full relative z-0 bg-no-repeat bg-cover bg-[position:0_5%] pb-40">
             <Navbar isPermission={false} />
             <div className="my-13 md:mt-20 mx-auto w-full max-w-[700px] px-5 md:max-w-[75rem] md:px-0 space-y-6">
                 <div className="space-y-4 max-w-[588px]">
@@ -26,21 +30,66 @@ const Suggest = () => {
                     <Button text="Search" />
                 </div>
             </div>
+            <div
+                className="
+                    md:px-0 
+                    px-10 
+                    justify-center 
+                    md:justify-start 
+                    flex 
+                    gap-x-6 
+                    gap-y-4 
+                    flex-shrink-0 
+                    flex-wrap 
+                    w-full 
+                    max-w-4xl 
+                    mx-auto 
+                    md:max-w-[75rem]
+                    mb-18
+                    "
+            >
+                {cardsOfFilm.map((card, index) => (
+                    <Suspense fallback={<CardSkeleton />}>
+                        <Card
+                            image={card.image}
+                            variants={card.variants}
+                            name={card.name}
+                            rating={card.rating}
+                            id={card.id}
+                            page={"/suggest-me"}
+                            key={index + card.name}
+                            handleOpenPopup={() => setIsSuggest(!isSuggest)}
+                        /></Suspense>
+                ))}
+                <SuggestionPopup
+                    setIsPopping={() => setIsSuggest(false)}
+                    isPopping={isSuggest}
+                />
+
+            </div>
+            <div className="
+                    w-full
+                    max-w-[700px]
+                    md:max-w-[1200px]
+                    mx-auto
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                    gap-y-6
+                    b
+                ">
                 <div
-                    className="md:px-0 px-10 justify-center md:justify-start flex gap-x-6 gap-y-8 flex-shrink-0 flex-wrap w-full max-w-4xl mx-auto md:max-w-[75rem]"
-                >
-                    {cardsOfFilm.map((card, index) => (
-                        <CardSkeleton
-                        // page="/movies"
-                        // id={card.id}
-                        // key={card.name + index}
-                        // image={card.image}
-                        // variants={""}
-                        // name={card.name}
-                        // rating={card.rating}
-                        />
-                    ))}
-                </div>
+                    className="text-gray-400
+                        text-xl
+                        text-center
+                        body-large
+                        "
+                >Didin’t find the one you looking for?</div>
+                <Button
+                    classNames="max-w-[189px] body-small relative left-4"
+                    text={"Suggest Manually"} />
+            </div>
         </div>
     )
 }

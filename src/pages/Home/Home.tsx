@@ -39,7 +39,7 @@ const Home = () => {
                         id={card.id}
                         key={card.name + index}
                         image={card.image}
-                        variants={""}
+                        variants={"normal"}
                         name={card.name}
                         rating={card.rating} />
                 ))}

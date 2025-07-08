@@ -6,6 +6,7 @@ import App from "../App";
 import TVShows from "@/pages/TV Shows/TV Shows";
 import { Detail } from "@/pages/Detail";
 import { Suggest } from "@/pages/Suggest";
+import { SkeletonLoaded } from "@/widgets/SkeletonLoaded";
 
 let router = createBrowserRouter([
     {
@@ -14,33 +15,33 @@ let router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Suspense fallback={<h1>Loadinng</h1>}><Home /></Suspense>,
+                element: <Suspense fallback={<SkeletonLoaded />}><Home /></Suspense>,
             },
             {
                 path: '/movies',
-                element: <Suspense fallback={<h1>Loadinng</h1>}><Movies /></Suspense>,
+                element: <Suspense fallback={<SkeletonLoaded />}><Movies /></Suspense>,
             },
             {
                 path: '/tv-shows',
-                element: <Suspense fallback={<h1>Loadinng</h1>}><TVShows /></Suspense>,
+                element: <Suspense fallback={<SkeletonLoaded />}><TVShows /></Suspense>,
 
             },
             {
                 path: '/:id',
-                element: <Suspense fallback={<h1>Loading</h1>}><Detail /></Suspense>
+                element: <Suspense fallback={<SkeletonLoaded />}><Detail /></Suspense>
             },
             {
                 path: `/tv-shows/:twShowsId`,
-                element: <Suspense fallback={<h1>Loading</h1>}><Detail page="tv-shows" /></Suspense>
+                element: <Suspense fallback={<SkeletonLoaded />}><Detail page="tv-shows" /></Suspense>
             },
             {
                 path: `/movies/:moviesId`,
-                element: <Suspense fallback={<h1>Loading</h1>}><Detail page="movies" /></Suspense>,
+                element: <Suspense fallback={<SkeletonLoaded />}><Detail page="movies" /></Suspense>,
 
             },
             {
                 path: '/suggest-me',
-                element: <Suspense fallback={<h1>Loading</h1>}><Suggest /></Suspense>,
+                element: <Suspense fallback={<SkeletonLoaded />}><Suggest /></Suspense>,
             }
         ]
     },

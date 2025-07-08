@@ -1,12 +1,14 @@
 type ButtonProps = {
     text: string;
+    classNames?: string;
 }
 
 const Button = ({
-    text
+    text,
+    classNames
 }: ButtonProps) => {
     return (
-        <button className="
+        <button className={`
         max-w-[121px] 
         w-full 
         body-regular 
@@ -16,7 +18,9 @@ const Button = ({
         outline-none
         px-8
         py-4
-        rounded-xl">
+        rounded-xl
+        ${classNames ? `${classNames}` : 'max-w-[121px] body-regular'}
+        `}>
             {text}
         </button>)
 }
