@@ -7,6 +7,7 @@ import TVShows from "@/pages/TV Shows/TV Shows";
 import { Detail } from "@/pages/Detail";
 import { Suggest } from "@/pages/Suggest";
 import { SkeletonLoaded } from "@/widgets/SkeletonLoaded";
+import { Login } from "@/pages/Login";
 
 let router = createBrowserRouter([
     {
@@ -42,7 +43,11 @@ let router = createBrowserRouter([
             {
                 path: '/suggest-me',
                 element: <Suspense fallback={<SkeletonLoaded />}><Suggest /></Suspense>,
-            }
+            },
+            {
+                path: '/logout',
+                element: <Suspense fallback={<SkeletonLoaded />}><Login /></Suspense>,
+            },
         ]
     },
 ]);

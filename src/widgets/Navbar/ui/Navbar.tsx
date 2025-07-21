@@ -1,5 +1,5 @@
 import Logo from '@/shared/assets/logo.svg';
-import menu from './Menu';
+import menu from '@/shared/const/menu';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import Menu from '@/shared/assets/menu.svg'
 import useResize from '@/shared/hooks/useResize';
@@ -59,7 +59,7 @@ const Navbar = ({
                     {menu(isPermission)[type].map((item: JSX.Element | string, index) => (
                         <div className='px-4 pt-4 pb-4 caption text-sm text-primary-300
                         sticky top-1 right-0
-                        transition-transform ease-in-out duration-300
+                        transition-all ease-in-out duration-300
                         hover:bg-white-50 whitespace-nowrap
                         '
                         key={`${index} ${item}`}

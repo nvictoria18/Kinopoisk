@@ -1,15 +1,16 @@
 type ButtonProps = {
     text: string;
     classNames?: string;
+    handleClick?: () => void;
 }
 
 const Button = ({
     text,
-    classNames
+    classNames,
+    handleClick
 }: ButtonProps) => {
     return (
-        <button className={`
-        max-w-[121px] 
+        <button className={` 
         w-full 
         body-regular 
         text-base
@@ -20,7 +21,9 @@ const Button = ({
         py-4
         rounded-xl
         ${classNames ? `${classNames}` : 'max-w-[121px] body-regular'}
-        `}>
+        `}
+        onClick={handleClick}
+        >
             {text}
         </button>)
 }

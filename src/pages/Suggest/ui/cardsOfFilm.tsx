@@ -16,64 +16,64 @@ type CardOfFilmProps = {
 }
 
 const cardsOfFilm: CardOfFilmProps[] = [
-    {
-        id: 1,
-        name: 'Black Widow',
-        rating: '6.8',
-        image: <img src={BlackWidow} />,
-        variants: "suggest"
-    },
-    {
-        id: 2,
-        name: 'Shang Chi',
-        rating: '7.9',
-        image: <img src={ShangChi} />,
-        variants: "suggest"
+    // {
+    //     id: 1,
+    //     name: 'Black Widow',
+    //     rating: '6.8',
+    //     image: <img src={BlackWidow} />,
+    //     variants: "suggest"
+    // },
+    // {
+    //     id: 2,
+    //     name: 'Shang Chi',
+    //     rating: '7.9',
+    //     image: <img src={ShangChi} />,
+    //     variants: "suggest"
 
-    }, {
-        id: 3,
-        name: 'Loki',
-        rating: '8.4',
-        image: <img src={Loki} />,
-        variants: "suggest"
+    // }, {
+    //     id: 3,
+    //     name: 'Loki',
+    //     rating: '8.4',
+    //     image: <img src={Loki} />,
+    //     variants: "suggest"
 
-    }, {
-        id: 4,
-        name: 'How I Met Your Mother',
-        rating: '8.3',
-        image: <img src={HowIMetYourMother} />,
-        variants: "suggest"
+    // }, {
+    //     id: 4,
+    //     name: 'How I Met Your Mother',
+    //     rating: '8.3',
+    //     image: <img src={HowIMetYourMother} />,
+    //     variants: "suggest"
 
-    }, {
-        id: 5,
-        name: 'Money Heist',
-        rating: '8.3',
-        image: <img src={MoneyHeist} />,
-        variants: "watched"
+    // }, {
+    //     id: 5,
+    //     name: 'Money Heist',
+    //     rating: '8.3',
+    //     image: <img src={MoneyHeist} />,
+    //     variants: "watched"
 
-    }, {
-        id: 6,
-        name: 'Friends',
-        rating: '8.8',
-        image: <img src={Friends} />,
-        variants: "suggest"
+    // }, {
+    //     id: 6,
+    //     name: 'Friends',
+    //     rating: '8.8',
+    //     image: <img src={Friends} />,
+    //     variants: "suggest"
 
-    },
-    {
-        id: 7,
-        name: 'The Big Bang Theory',
-        rating: '8.1',
-        image: <img src={TheBigBangTheory} />,
-        variants: "suggest"
+    // },
+    // {
+    //     id: 7,
+    //     name: 'The Big Bang Theory',
+    //     rating: '8.1',
+    //     image: <img src={TheBigBangTheory} />,
+    //     variants: "suggest"
 
-    },
-    {
-        id: 8,
-        name: 'Two And a Half Men',
-        rating: '7',
-        image: <img src={TwoAndaHalfMen} />,
-        variants: "suggest"
-    },
+    // },
+    // {
+    //     id: 8,
+    //     name: 'Two And a Half Men',
+    //     rating: '7',
+    //     image: <img src={TwoAndaHalfMen} />,
+    //     variants: "suggest"
+    // },
 ]
 
 export default cardsOfFilm;

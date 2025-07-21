@@ -1,10 +1,11 @@
 import Navbar from "@/widgets/Navbar/ui/Navbar";
 import Background from "@/shared/assets/background.png"
-import Input from "@/shared/ui/Input/Input";
+import Input from "@/shared/ui/Input/ui/Input";
 import Select from "@/shared/ui/Select/Select";
 import { Card } from '@/widgets/Card/index'
 import cardsOfFilm from "./ui/cardsOfFilm";
-import { Outlet } from "react-router-dom";
+import Search from "@/shared/assets/search-normal.svg"
+
 
 const Home = () => {
     return (
@@ -21,7 +22,7 @@ const Home = () => {
                         List of movies and TV Shows, I, <span className="text-primary-300">Pramod Poudel</span> have watched till date. Explore what I have watched and also feel free to make a suggestion. 😉
                     </div>
                 </div>
-                <Input placeholder="Search Movies or TV Shows"></Input>
+                <Input icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} placeholder="Search Movies or TV Shows"></Input>
             </div>
             <div className="mx-auto w-full max-w-[700px] md:max-w-[75rem] md:px-0 px-5">
 

@@ -1,6 +1,6 @@
 import Star from '@/shared/assets/star.svg'
 import { Link } from 'react-router-dom';
-import variantsOfButton from './variantsOfButton';
+import variantsOfButton from '../../../shared/const/variantsOfButton';
 import { useState } from 'react';
 import Popup from '@/shared/ui/Popup/ui/Popup';
 

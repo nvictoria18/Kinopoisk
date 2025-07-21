@@ -2,7 +2,9 @@ import { Navbar } from "@/widgets/Navbar";
 import Background from "@/shared/assets/background.png"
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
-import Input from "@/shared/ui/Input/Input";
+import Input from "@/shared/ui/Input/ui/Input";
+import Search from "@/shared/assets/search-normal.svg"
+
 
 const TVShows = () => {
 
@@ -19,7 +21,7 @@ const TVShows = () => {
                     </div>
                 </div>
                 <div>
-                    <Input placeholder="Search Movies or TV Shows" />
+                    <Input icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} placeholder="Search Movies or TV Shows" />
                 </div>
 
             </div>

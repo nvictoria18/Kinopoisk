@@ -1,15 +1,21 @@
 import { Navbar } from "@/widgets/Navbar";
 import Background from "@/shared/assets/background.png"
-import Input from "@/shared/ui/Input/Input";
+import Input from "@/shared/ui/Input/ui/Input";
 import Button from "@/shared/ui/Button/Button";
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
 import CardSkeleton from "@/widgets/Card/ui/CardSkeleton";
-import { Suspense, useState } from "react";
-import { SuggestionPopup } from "@/shared/ui/Popup";
+import { MouseEventHandler, Suspense, useRef, useState } from "react";
+import { ManualSuggestPopup, SuggestionPopup } from "@/shared/ui/Popup";
+import Search from "@/shared/assets/search-normal.svg"
+import { useOutsideClick } from "@/shared/hooks/useOutsideClick";
+
 
 const Suggest = () => {
     const [isSuggest, setIsSuggest] = useState(false)
+    const [isSuggestManually, setIsSuggestManually] = useState(false);
+    const suggestMannualyRef = useOutsideClick(() => setIsSuggestManually(false));
+    const suggestRef = useOutsideClick(() => () => setIsSuggest(false));
 
     return (
         <div style={{
@@ -26,12 +32,18 @@ const Suggest = () => {
                     </div>
                 </div>
                 <div className="gap-2 flex mb-20">
-                    <Input classNames="md:max-w-[384px]" placeholder="Search Movies or TV Shows" />
+                    <Input disabled={isSuggestManually} icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} classNames="md:max-w-[384px]" placeholder="Search Movies or TV Shows" />
                     <Button text="Search" />
                 </div>
             </div>
-            <div
-                className="
+            {
+                cardsOfFilm.length === 0 ?
+                    <div className="mt-24 text-center text-gray-50 heading-two text-5xl mb-4">
+                        Sorry, No results found
+                    </div>
+                    :
+                    <div
+                        className="
                     md:px-0 
                     px-10 
                     justify-center 
@@ -47,27 +59,27 @@ const Suggest = () => {
                     md:max-w-[75rem]
                     mb-18
                     "
-            >
-                {cardsOfFilm.map((card, index) => (
-                    <Suspense fallback={<CardSkeleton />}>
-                        <Card
-                            image={card.image}
-                            variants={card.variants}
-                            name={card.name}
-                            rating={card.rating}
-                            id={card.id}
-                            page={"/suggest-me"}
-                            key={index + card.name}
-                            handleOpenPopup={() => setIsSuggest(!isSuggest)}
-                        /></Suspense>
-                ))}
-                <SuggestionPopup
-                    setIsPopping={() => setIsSuggest(false)}
-                    isPopping={isSuggest}
-                />
-
-            </div>
-            <div className="
+                    >
+                        {cardsOfFilm.map((card, index) => (
+                            <Suspense fallback={<CardSkeleton />}>
+                                <Card
+                                    image={card.image}
+                                    variants={card.variants}
+                                    name={card.name}
+                                    rating={card.rating}
+                                    id={card.id}
+                                    page={"/suggest-me"}
+                                    key={index + card.name}
+                                    handleOpenPopup={() => setIsSuggest(!isSuggest)}
+                                /></Suspense>
+                        ))}
+                        <SuggestionPopup
+                            popupRef={suggestRef}
+                            setIsPopping={() => setIsSuggest(false)}
+                            isPopping={isSuggest}
+                        />
+                    </div>}
+            <div className={`
                     w-full
                     max-w-[700px]
                     md:max-w-[1200px]
@@ -76,19 +88,28 @@ const Suggest = () => {
                     flex-col
                     items-center
                     justify-center
-                    gap-y-6
-                    b
-                ">
+                    
+                    ${cardsOfFilm.length === 0 ? 'gap-y-10' : 'gap-y-6'}
+                `}>
                 <div
                     className="text-gray-400
                         text-xl
                         text-center
                         body-large
+                        max-w-[640px]
+                        w-full
                         "
-                >Didin’t find the one you looking for?</div>
+                >{cardsOfFilm.length === 0 ? 'There are no movies or TV shows matching your search terms. You can suggest me manually' : "Didin’t find the one you looking for?"}</div>
                 <Button
-                    classNames="max-w-[189px] body-small relative left-4"
-                    text={"Suggest Manually"} />
+                    classNames={`max-w-[189px] body-small relative ${cardsOfFilm.length === 0 ? 'left-0' : 'left-4'}`}
+                    text={"Suggest Manually"}
+                    handleClick={() => setIsSuggestManually(!isSuggestManually)} />
+                <ManualSuggestPopup
+                    popupRef={suggestMannualyRef}
+                    setIsPopping={() => setIsSuggestManually(false)}
+                    isPopping={isSuggestManually}
+                    disabled={!isSuggestManually}
+                />
             </div>
         </div>
     )

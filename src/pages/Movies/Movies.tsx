@@ -1,14 +1,16 @@
 import { Navbar } from "@/widgets/Navbar";
 import Background from "@/shared/assets/background.png"
-import Input from "@/shared/ui/Input/Input";
+import Input from "@/shared/ui/Input/ui/Input";
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
+import Search from "@/shared/assets/search-normal.svg"
+
 
 const Movies = () => {
     return (<div style={{
         backgroundImage: `url(${Background})`
     }} className="w-full relative z-0 bg-no-repeat bg-cover bg-[position:0_5%] pb-[156px]">
-        <Navbar isPermission={false} />
+        <Navbar isPermission={true} />
         <div className="pt-16 pb-12 max-w-[700px] px-5 md:px-0 w-full mx-auto md:max-w-[75rem]">
             <div className="mb-6">
                 <div className="body-extra-small text-primary-200">MaileHereko</div>
@@ -18,7 +20,7 @@ const Movies = () => {
             </div>
             <div>
 
-                <Input placeholder="Search Movies or TV Shows" />
+                <Input icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} placeholder="Search Movies or TV Shows" />
             </div>
 
         </div>
