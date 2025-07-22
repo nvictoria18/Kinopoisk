@@ -4,7 +4,7 @@ import cardsOfFilm from "./ui/cardsOfFilm"
 import { Card } from "@/widgets/Card"
 import { Input } from "@/shared/ui/Input";
 import Search from "@/shared/assets/search-normal.svg"
-import { Button, ButtonRequest } from "@/shared/ui/Button";
+import { ButtonRequest } from "@/shared/ui/Button";
 
 const Add = () => {
     return (

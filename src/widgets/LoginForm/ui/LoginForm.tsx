@@ -2,7 +2,7 @@
 import { Input } from "@/shared/ui/Input";
 import Email from "@/shared/assets/sms.svg";
 import Password from "@/shared/assets/key-square.svg"
-import { Button } from "@/shared/ui/Button";
+import { ButtonRequest } from "@/shared/ui/Button";
 import { useState } from "react";
 
 const LoginForm = () => {
@@ -26,7 +26,7 @@ const LoginForm = () => {
                     visibleText
                     classNames="max-w-3xl md:max-w-[486px]" icon={<Password className="w-6 h-6" />} />
             </div>
-            <Button classNames="max-w-[486px]" content={"Login"} />
+            <ButtonRequest classNames="max-w-[486px]" content={"Login"} />
         </div>
     )
 }

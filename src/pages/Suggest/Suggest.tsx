@@ -1,7 +1,7 @@
 import { Navbar } from "@/widgets/Navbar";
 import Background from "@/shared/assets/background.png"
 import Input from "@/shared/ui/Input/ui/Input";
-import { Button } from "@/shared/ui/Button";
+import { ButtonRequest } from "@/shared/ui/Button";
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
 import CardSkeleton from "@/widgets/Card/ui/CardSkeleton";
@@ -17,6 +17,10 @@ const Suggest = () => {
     const suggestMannualyRef = useOutsideClick(() => setIsSuggestManually(false));
     const suggestRef = useOutsideClick(() => () => setIsSuggest(false));
 
+    const handleOpenModalSuggestManually = () => {
+        console.log('click on modal')
+        setIsSuggestManually(!isSuggestManually)
+    }
     return (
         <div style={{
             backgroundImage: `url(${Background})`
@@ -33,7 +37,7 @@ const Suggest = () => {
                 </div>
                 <div className="gap-2 flex mb-20">
                     <Input disabled={isSuggestManually} icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} classNames="md:max-w-[384px]" placeholder="Search Movies or TV Shows" />
-                    <Button content="Search" />
+                    <ButtonRequest content="Search" />
                 </div>
             </div>
             {
@@ -100,10 +104,10 @@ const Suggest = () => {
                         w-full
                         "
                 >{cardsOfFilm.length === 0 ? 'There are no movies or TV shows matching your search terms. You can suggest me manually' : "Didin’t find the one you looking for?"}</div>
-                <Button
+                <ButtonRequest
                     classNames={`max-w-[189px] body-small relative ${cardsOfFilm.length === 0 ? 'left-0' : 'left-4'}`}
                     content={"Suggest Manually"}
-                    handleClick={() => setIsSuggestManually(!isSuggestManually)} />
+                    handleClick={handleOpenModalSuggestManually} />
                 <ManualSuggestPopup
                     popupRef={suggestMannualyRef}
                     setIsPopping={() => setIsSuggestManually(false)}

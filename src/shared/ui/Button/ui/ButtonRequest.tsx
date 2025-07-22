@@ -13,18 +13,17 @@ const ButtonRequest = ({
     classNames,
     handleClick
 }: ButtonRequestProps) => {
-    const [changedContent, setChangedContent] = useState(false);
+    const [changedContent, setChangedContent] = useState(true);
 
-    useEffect(() => {
-        setTimeout(() => setChangedContent(true), 200000)
-    }, [])
-
-
+    const loadingData = () => {
+        setChangedContent(!changedContent);
+        return handleClick ? handleClick() : null;
+    }
     return (
         <Button
-            content={changedContent ? content : <Spinner className="w-8 h-8" />}
+            content={changedContent ? content : <Spinner className="w-8 h-full" />}
             classNames={`${classNames ? classNames : 'max-w-[121px] body-regular'} flex justify-center items-center`}
-            handleClick={handleClick}
+            handleClick={loadingData}
         />)
 }
 
