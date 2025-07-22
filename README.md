@@ -23,4 +23,6 @@
 
 ```bash
 npm install
-npm run dev
+npm run start
+npm run build:dev
+npm run build:prod
