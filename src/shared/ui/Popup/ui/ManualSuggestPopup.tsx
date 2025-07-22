@@ -3,7 +3,7 @@ import Popup from "./Popup";
 import { Input } from "../../Input";
 import VideoPlay from "@/shared/assets/video-play.svg"
 import Link from "@/shared/assets/link.svg"
-import Button from "../../Button/Button";
+import { Button } from "@/shared/ui/Button";
 
 type ManualSuggestPopupProps = {
     isPopping: boolean;
@@ -40,7 +40,7 @@ const ManualSuggestPopup = ({
                         classNames="md:max-w-[400px]"
                     />
                 </div>
-                <Button classNames="md:max-w-[400px] body-regular" text="Suggest" />
+                <Button classNames="md:max-w-[400px] body-regular" content="Suggest" />
             </div>
         }
     />

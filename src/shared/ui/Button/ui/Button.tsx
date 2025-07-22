@@ -1,11 +1,12 @@
+
 type ButtonProps = {
-    text: string;
+    content: string | JSX.Element;
     classNames?: string;
     handleClick?: () => void;
 }
 
 const Button = ({
-    text,
+    content,
     classNames,
     handleClick
 }: ButtonProps) => {
@@ -24,7 +25,7 @@ const Button = ({
         `}
         onClick={handleClick}
         >
-            {text}
+            {content}
         </button>)
 }
 

@@ -12,7 +12,7 @@ const Home = () => {
         <div style={{
             backgroundImage: `url(${Background})`
         }} className="w-full relative z-0 bg-no-repeat bg-cover bg-[position:0_5%] pb-[156px]">
-            <Navbar isPermission={false} />
+            <Navbar isPermission={true} />
             <div className="my-13 md:my-20 mx-auto w-full max-w-[700px] px-5 md:max-w-[75rem] md:px-0 space-y-6">
                 <div className="space-y-4 max-w-[588px]">
                     <div className="heading-one text-[2.8rem] text-gray-50 md:text-heading-one ">

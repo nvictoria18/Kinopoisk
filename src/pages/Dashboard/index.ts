@@ -1,0 +1,1 @@
+export { DashboardLazy as Dashboard } from "./Dashboard.lazy"

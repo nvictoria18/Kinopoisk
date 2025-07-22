@@ -8,6 +8,8 @@ import { Detail } from "@/pages/Detail";
 import { Suggest } from "@/pages/Suggest";
 import { SkeletonLoaded } from "@/widgets/SkeletonLoaded";
 import { Login } from "@/pages/Login";
+import { Dashboard } from "@/pages/Dashboard/";
+import { Add } from "@/pages/Add";
 
 let router = createBrowserRouter([
     {
@@ -47,6 +49,15 @@ let router = createBrowserRouter([
             {
                 path: '/logout',
                 element: <Suspense fallback={<SkeletonLoaded />}><Login /></Suspense>,
+            },
+            {
+                path: '/dashboard',
+                element: <Suspense fallback={<SkeletonLoaded />}><Dashboard /></Suspense>,
+
+            },
+            {
+                path: '/add',
+                element: <Suspense fallback={<SkeletonLoaded />}><Add /></Suspense>,
             },
         ]
     },

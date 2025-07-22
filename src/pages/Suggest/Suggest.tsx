@@ -1,7 +1,7 @@
 import { Navbar } from "@/widgets/Navbar";
 import Background from "@/shared/assets/background.png"
 import Input from "@/shared/ui/Input/ui/Input";
-import Button from "@/shared/ui/Button/Button";
+import { Button } from "@/shared/ui/Button";
 import cardsOfFilm from "./ui/cardsOfFilm";
 import { Card } from "@/widgets/Card";
 import CardSkeleton from "@/widgets/Card/ui/CardSkeleton";
@@ -33,7 +33,7 @@ const Suggest = () => {
                 </div>
                 <div className="gap-2 flex mb-20">
                     <Input disabled={isSuggestManually} icon={<Search className="min-w-5 min-h-5 md:w-6 md:h-6 text-gray-600" />} classNames="md:max-w-[384px]" placeholder="Search Movies or TV Shows" />
-                    <Button text="Search" />
+                    <Button content="Search" />
                 </div>
             </div>
             {
@@ -102,7 +102,7 @@ const Suggest = () => {
                 >{cardsOfFilm.length === 0 ? 'There are no movies or TV shows matching your search terms. You can suggest me manually' : "Didin’t find the one you looking for?"}</div>
                 <Button
                     classNames={`max-w-[189px] body-small relative ${cardsOfFilm.length === 0 ? 'left-0' : 'left-4'}`}
-                    text={"Suggest Manually"}
+                    content={"Suggest Manually"}
                     handleClick={() => setIsSuggestManually(!isSuggestManually)} />
                 <ManualSuggestPopup
                     popupRef={suggestMannualyRef}
